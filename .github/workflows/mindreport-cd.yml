@@ -53,9 +53,9 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_EB_ACCESS_KEY_ID }} 
           aws_secret_key: ${{ secrets.AWS_EB_SECRET_ACCESS_KEY_ID }} 
-          application-name: mindreport-springboot-application
+          application_name: mindreport-springboot-application
           environment_name: Mindreport-springboot-applicatio-env
           version_label: Github Action-${{steps.current-time.outputs.formattedTime}} 
           region: ap-northeast-2
           deployment_package: deploy/deploy.zip
-          wait_for_deployment : false
+          wait_for_deployment: false
