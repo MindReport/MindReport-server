@@ -1,5 +1,7 @@
 package com.mindreport.server.controller;
 
+import com.mindreport.server.base.code.status.ErrorStatus;
+import com.mindreport.server.base.exception.handler.TempHandler;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,4 +20,11 @@ public class TestController {
     public String hello() {
         return "Swagger Setting Success!";
     }
+
+    @GetMapping("/test/error")
+    @Operation(summary = "에러 통일 테스트용 API 입니다.", description = "simple API for API Error Response!")
+    public String apiResponseTest() {
+        throw new TempHandler(ErrorStatus.TEMP_EXCEPTION);
+    }
+
 }
